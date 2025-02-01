@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #F1DEC6; /* Sesuaikan dengan warna latar belakang tabel */
+    z-index: 1;
+}
+
+
+ /* Custom styles Blog untuk elemen yang dibuat dinamis */
+ .editor-content [data-placeholder]:empty:before {
+    content: attr(data-placeholder);
+    color: #999;
+}
+
+/* Style untuk elemen yang dibuat melalui execCommand */
+.editor-content blockquote {
+    @apply border-l-4 border-gray-300 my-4 pl-4 text-gray-600 italic;
+}
+
+.editor-content pre code {
+    @apply bg-gray-100 p-4 rounded block font-mono text-sm;
+}
+

@@ -1,0 +1,418 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#error-message {
+  display: none; 
+  color: red;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 10vh;
+
+}
+
+html {
+    min-height: -80vh;
+}
+body{
+    font-family: 'Montserrat' !important;   
+    background: linear-gradient(-21.11deg, #00c0fa 30%, #015eea);
+    background-size: 100% 100vh;
+    background-attachment: fixed; /* add this line */
+    height: 100vh;
+    overflow-y: auto; /* add a scrollbar if the content exceeds the height */
+}   
+
+
+a {
+    color: #5ce6ff !important;
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+.form-hidden {
+    display: none;
+  }
+
+input ::placeholder {
+    word-wrap: break-word; /* Ensures long words will wrap*/
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Tambahkan ini untuk memastikan container mengambil ruang yang tersedia */
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 80vh;
+    padding: 50px 0 15px 15px; /* Reduced padding */
+}
+
+.container .form-container, .container .output-container{
+    height: 200vh;
+}
+
+.form-container, .output-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+.icon .img-bg {
+    height: 200px;
+    width:fit-content;
+    position: absolute;
+}
+
+.form-left{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+/* Transition effect */
+.form-left, .form-right img {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.form-left.show, .form-right img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.footer .container {
+    position: relative;
+    bottom: 0;
+    display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 1px 1px 1px 1px; /* Reduced padding */
+  min-height: calc(1vh - 1px); /* 90px adalah tinggi footer */
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    height: 55px;
+    background: #015eea;
+    padding: 10px 0;
+    justify-content: center;
+    margin: 40px 0 0 0; /* Tambahkan ini untuk memastikan footer berada di atas elemen lainnya */
+}
+
+
+.logo-footer {
+display: none;
+}
+
+.footer p {
+ margin: 0;
+ text-align: start;
+ word-wrap: break-word; /* Ensures long words will wrap */
+ font-size: calc(0.5rem + 0.5vw);
+ color: #fff;
+}
+
+
+
+.form-left-title {
+    margin-bottom: 20px;
+    max-width: 100%; /* Ensures the title container doesn't exceed its parent's width */
+}
+
+.form-left-title h2 {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 5px;
+    word-wrap: break-word; /* Ensures long words will wrap */
+}
+
+#text-container {
+    overflow: hidden; /* hide excess text */
+    text-overflow: ellipsis; /* add ellipsis at the end */
+    max-width: 600px; /* adjust the width to your liking */
+  }
+
+
+
+
+.form-left-title p{
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+hr {
+opacity: 100% !important;
+}
+
+.form-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #fffb00;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-left-title span{
+    color:#ff0000;
+}
+
+.form-left span{
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 6;    
+}
+.form-input{
+    width: 600px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #374955;
+    border-radius: 50px;
+}
+
+.form-input:focus{
+    border: 2.5px solid #7F3E6D;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.1);
+    transition: transform .3s ease-in-out;
+    
+}
+
+
+.form-input:focus::after {
+    transform: scaleX(1);
+}
+
+.form-input:focus::after {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .35s;
+}
+
+
+/* Hide spinners for Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinners for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.form-right img{
+    width: 350px;
+}
+@media (max-width:1500px) {
+    .footer p {
+        font-size: 0.9rem;
+        bottom: auto;
+      }
+}
+
+@media (max-width:1420px) {
+    .form-right img{
+        width: 250px;
+    }
+    
+   
+}
+
+@media (max-width:1020px) {
+    .form-right img{
+        width: 150px;
+    }
+}
+
+@media (max-width:985px) {
+    .form-input{
+        width:80vw;
+    }
+    .footer p {
+        font-size: 0.8rem;
+      }
+    .form-left-title h2{
+        font-size: 5vw;
+    }
+
+    .form-left-title p{
+        font-size: 2.5vw;
+    }
+    .form-left-title hr{
+        width: 20vw;
+    }
+
+    .logo-footer {
+        display: block;
+        width: 100px;
+        height: auto;
+        margin: 10px;
+    }
+
+    footer .container {
+        display: flex;
+        position:fixed;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .footer {
+        top: 135px;
+    }
+
+    .footer img {
+        width: auto;
+        height: 40px;
+        margin-left: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        justify-content:flex-end;
+    }
+
+    .form-container, .output-container {
+        display: grid;
+        align-items: center;
+        align-content: space-evenly;
+        justify-items: center;
+        gap: 10px;
+    }
+    .form-container img, .output-container img {
+        display: grid;
+        align-items: center;
+        justify-content: space-evenly;;
+    }
+
+    .img-bg{
+        display: none;
+    }
+
+    .dropdown-content {
+        width: 500px;
+    }
+    .container{
+        width: 100% !important;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        min-height: 75vh;
+    }
+}
+
+@media (max-width:490px) {
+    .footer{
+    top: 135px;
+    }
+    .btn-submit svg, .form-left-title .btn-submit svg, .btn-reset svg{
+      width: 0.6rem;
+    height: 0.6rem;
+    }
+      .buttonID p {
+        font-size: 0.8rem !important;
+        }
+    .form-input{
+        width:85vw;
+    }
+    .footer p {
+        font-size: 0.8rem;
+      }
+    
+    .footer img {
+        width: auto;
+        height: 30px;
+        margin-left: auto;
+        padding-left: 60px;
+    }
+
+    .form-container, .output-container {
+        display: grid;
+        align-items: center;
+        align-content: space-evenly;
+        justify-items: center;
+    }
+    .form-left-title h2{
+        font-size: 10vw;
+    }
+
+    .form-left-title p{
+        font-size: 5vw;
+    }
+    .form-left-title hr{
+        width: 20vw;
+    }
+
+    .icon .img-bg{
+        height: 100px;
+    }
+    .form-right img{
+        width: 100px;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        transform: translateY(35px);
+        bottom:10px;
+    }
+
+    .dropdown-content {
+        width: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dropdown-content {
+        width: 300px; /* atur tinggi sesuai kebutuhan Anda */
+    }
+    .btn-submit svg, .form-left-title .btn-submit svg, .btn-reset svg{
+      width: 1rem;
+    height: 1rem;
+    }
+    .buttonID p {
+    font-size: 0.8rem;
+    }
+}

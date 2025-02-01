@@ -1,0 +1,1859 @@
+@charset "UTF-8";
+
+@import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+
+*::before,
+
+*::after {
+
+  box-sizing: border-box;
+
+}
+
+*{
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+html {
+
+    scrollbar-width: none; /* For Firefox */
+
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+
+}
+
+body {
+
+    font-family: "Noto Sans";
+
+    background-color: #fff;
+
+    transition: background-color 0.3s ease-in-out;
+
+    cursor: url('/laravel/public/imgs/cursor_2.png') 20 20, auto; /* Set hotspot at the center of the cursor image */
+
+}
+
+
+
+a {
+
+    text-decoration: none; /* Removes the underline */
+
+    cursor: pointer;
+
+    
+
+}
+
+
+
+
+
+
+
+.overlay {
+
+height: auto !important;
+
+}
+
+
+
+.container, .overlay {
+
+    display: flex;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 45px 241px 0px 241px;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    align-content: flex-start;
+
+    gap: 128px;
+
+    flex-shrink: 0;
+
+    flex-wrap: wrap;
+
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+
+
+
+
+/* dark mode */
+
+
+
+.btnDarkmode-container {
+
+    display: flex;
+
+width: 118px;
+
+height: 65px;
+
+padding: 1px 10px;
+
+align-items: center;
+
+justify-content: flex-start;
+
+flex-shrink: 0;
+
+border-radius: 10px;
+
+background: linear-gradient(180deg, #F4A3BA 0%, #A3DDEE 100%);
+
+position: fixed;
+
+top: 150px; 
+
+right: -45px;
+
+z-index: 39999; 
+
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+
+
+.btn-mode {
+
+    position: relative;
+
+    width: 57px;
+
+    height: 57px;
+
+    background-color: transparent;
+
+    border: 0;
+
+    cursor: pointer;
+
+}
+
+
+
+.btn-mode svg {
+
+    height:47px;
+
+    width: 47px;
+
+}
+
+
+
+.btn-mode .dark,
+
+.btn-mode .light {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    transition: opacity 0.5s ease;
+
+}
+
+
+
+.btn-mode .dark {
+
+    opacity: 1; /* Tampilkan ikon dark secara default */
+
+}
+
+
+
+.btn-mode .light {
+
+    opacity: 0; /* Sembunyikan ikon light */
+
+}
+
+
+
+.btn-mode.dark-active .dark {
+
+    opacity: 0; /* Sembunyikan ikon dark saat mode light aktif */
+
+}
+
+
+
+.btn-mode.dark-active .light {
+
+    opacity: 1; /* Tampilkan ikon light saat mode light aktif */
+
+}
+
+
+
+.dark-mode #navbar-mobile, .dark-mode #navbar-desktop, .dark-mode .container, body.dark-mode, .dark-mode .marquee-container {
+
+    background-color: #2C2C2C;
+
+}
+
+
+
+.dark-mode h2  {
+
+    color: #fff;
+
+}
+
+
+
+.dark-mode .HeadingTxt{
+
+    color: #fff !important;
+
+}
+
+
+
+.dark-mode .navlink, .dark-mode .socialTxt, .dark-mode .txtDanger, .dark-mode .headDesc, .dark-mode .pDesc{
+
+    color: #fff !important;
+
+}
+
+
+
+.dark-mode a:hover, .dark-mode .socialTxt:hover{
+
+    color: #0091C2 !important; /* Warna garis */
+
+}
+
+
+
+.dark-mode .social svg {
+
+    fill: #fff;
+
+}
+
+
+
+.dark-mode .copyright span {
+
+    color: #fff ;
+
+}
+
+
+
+.dark-mode .boldTeam {
+
+    color: #a3ddee !important;
+
+    border-left: 1px solid #ffffff80 !important;
+
+}
+
+
+
+.dark-mode #menu-toggle  svg{
+
+    color: #fff;
+
+}
+
+
+
+.dark-mode footer, .dark-mode .portoVid {
+
+    background-color: #B39D4A;
+
+}
+
+
+
+.dark-mode .navbar.dekstop.scrolled {
+
+    background-color: #4A7D8F;
+
+}
+
+
+
+.dark-mode .logoNav {
+
+    background: url(/laravel/public/imgs/LogoDaisekoiPutih.png) center / cover no-repeat !important;
+
+}
+
+
+
+.dark-mode #pictHeadingDark {
+
+    background: url(/laravel/public/imgs/HomePageDark.png) center / cover no-repeat !important;
+
+}
+
+
+
+.dark-mode .btnDarkmode-container {
+
+background: linear-gradient(180deg, #FF769D 0%, #0493BF 100%);
+
+}
+
+
+
+
+
+
+
+/* navbar */
+
+#navbar-desktop, #navbar-mobile {
+
+background-color: #fff;
+
+}
+
+
+
+/* Heading */
+
+
+
+
+
+
+
+.container .heading {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex: 1 0 0;
+
+    gap: 75px;
+
+    padding: 0 0 100px 0;
+
+}
+
+
+
+.heading .pictHeading {
+
+    width: 585px;
+
+    height: 548px;
+
+    background: url(/assets/HomePage.png) center / cover no-repeat;
+
+    background-size: cover;
+
+}
+
+
+
+
+
+/* Animasi Text */
+
+
+
+.runningText .HeadingTxt {
+
+    color: #000;
+
+    text-align: center;
+
+    font-size: 48px;
+
+    font-style: normal;
+
+    font-weight: 400;
+
+    line-height: normal;
+
+    
+
+}
+
+.runningText {
+
+    display: flex;
+
+    align-self: stretch;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.marquee-container {
+
+    overflow: hidden;
+
+    width: 300px;
+
+    height: 90px;
+
+    position: relative;
+
+    background-color: white;
+
+    
+
+}
+
+
+
+.marquee-content {
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 0;
+
+    text-align: center;
+
+    animation: scrollUp 600ms ease-in-out forwards;
+
+    animation-delay: 800ms;
+
+}
+
+
+
+.marquee-content p {
+
+    color: #0091C2;
+
+text-align: center;
+
+font-family: "Noto Sans";
+
+font-size: 48px;
+
+font-style: normal;
+
+font-weight: 700;
+
+line-height: normal;
+
+    display: none; /* Semua teks disembunyikan di awal */
+
+}
+
+
+
+
+
+/* Animasi dengan efek bounce */
+
+@keyframes bounceUp {
+
+    0% {
+
+        transform: translateY(100%);
+
+    }
+
+    40% {
+
+        transform: translateY(0);
+
+    }
+
+    60% {
+
+        transform: translateY(-10%);
+
+    }
+
+    50% {
+
+        transform: translateY(0);
+
+    }
+
+    80% {
+
+        transform: translateY(0);
+
+    }
+
+    100% {
+
+        transform: translateY(-100%);
+
+    }
+
+}
+
+
+
+
+
+/* Button Filter gallery & Portfolio */
+
+
+
+.select-menu {
+
+    width: 274px;
+
+    position: sticky;
+
+    padding: 10px 0;
+
+    z-index: 2;
+
+}
+
+
+
+
+
+  .select-menu .select-btn{
+
+    display: flex;
+
+    height: 45px;
+
+    background: linear-gradient(86deg, #F4A3BA 0.17%, #A3DDEE 99.83%);
+
+    padding: 10px 20px;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    border-radius: 8px;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    justify-content: space-between;
+
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+  
+
+  }
+
+  .select-btn i{
+
+    font-size: 25px;
+
+    transition: 0.3s;
+
+    color: #F5F5F5;
+
+  }
+
+  .select-menu.active .select-btn i{
+
+    transform: rotate(-180deg);
+
+    
+
+   
+
+  }
+
+  .select-menu .options{
+
+    position: absolute;
+
+    top: 60px; 
+
+    width: 274px;
+
+    padding: 10px 0; 
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(86deg, #F4A3BA 0.17%, #A3DDEE 99.83%);
+
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 2;
+
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+
+  }
+
+  
+
+  
+
+  
+
+  .select-menu.active .options{
+
+    position: absolute;
+
+    opacity: 1;
+
+    visibility: visible;
+
+  }
+
+  
+
+  
+
+  
+
+  .options .option{
+
+    display: flex;
+
+    height: 45px;
+
+    cursor: pointer;
+
+    padding: 0 16px;
+
+    border-radius: 8px;
+
+    align-items: center;
+
+    
+
+  
+
+  }
+
+  .options .option:hover{
+
+    background: linear-gradient(86deg, #A3DDEE 0.17%,  #F4A3BA 99.83%);
+
+    color: #ffffff;
+
+    
+
+  }
+
+  .option i{
+
+    font-size: 25px;
+
+    margin-right: 12px;
+
+  }
+
+  .option .option-text{
+
+    font-size: 18px;
+
+    
+
+  }
+
+  .bx-chevron-down:before {
+
+    content: "\ea4a";
+
+}
+
+
+
+.sBtn-text {
+
+    font-weight: 700;
+
+    color: #F5F5F5;
+
+}
+
+
+
+/* Galeri */
+
+.containerGallery {
+
+    display: flex;
+
+width: 988px;
+
+height: auto !important;
+
+padding: 76px 40px;
+
+align-items: center;
+
+gap: 76px;
+
+flex-shrink: 0;
+
+}
+
+
+
+
+
+#galleryModal {
+
+z-index: 40000;
+
+}
+
+
+
+.modalContent{
+
+    background: linear-gradient(151deg, #A3DDEE 0%, #FFEDA3 77.91%);
+
+}
+
+
+
+
+
+
+
+.headingGallery, .headingPortfolio {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+}
+
+
+
+.headingGallery .txtGallery {
+
+    width: 100%; 
+
+    height: 100%; 
+
+    position: relative
+
+}
+
+
+
+.headingGallery .Glr1{
+
+    font-size: 64px;
+
+    -webkit-text-stroke: 2px #0091C2; /* Stroke warna biru */
+
+    color: transparent; /* Tidak ada fill */
+
+    font-family: 'Noto Sans', sans-serif;
+
+    font-weight: 700;
+
+    word-wrap: break-word;
+
+    left: 3px;
+
+    top: 0px;
+
+    text-align: center;
+
+    border: none; /* Menghapus border agar hanya stroke terlihat */
+
+}
+
+
+
+.headingGallery .linkGallery {
+
+    text-decoration: none; /* Removes the underline */
+
+    color: #0091C2;
+
+    font-size: 16px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    line-height: normal;
+
+    transition: transform 0.3s ease; 
+
+    position: relative;
+
+}
+
+
+
+.linkGallery:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+
+
+
+
+
+
+.headingGallery .Glr2{
+
+    color: #F4A3BA;
+
+    font-size: 64px;
+
+    font-family: Noto Sans;
+
+    font-weight: 700;
+
+    word-wrap: break-word;
+
+    left: 2px; 
+
+    top: 2px; 
+
+    position: absolute;
+
+}
+
+
+
+.picturePlacement {
+
+    width: auto;
+
+    height: 750; /* Fixed height to enable scrolling */
+
+    overflow-y: scroll; /* Enable vertical scroll */
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    align-items: center;
+
+    scrollbar-width: none; /* For Firefox */
+
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+
+    transition: opacity 0.3s ease;
+
+}
+
+
+
+/* Show the scrollbar on hover */
+
+.picturePlacement:hover {
+
+    overflow-y: scroll; /* Enable vertical scrolling on hover */
+
+    scrollbar-width:unset; /* For Firefox */
+
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+
+.picturePlacement::-webkit-scrollbar {
+
+    width: 0; /* Hide scrollbar */
+
+}
+
+
+
+/* Show a thin scrollbar on hover */
+
+.picturePlacement:hover::-webkit-scrollbar {
+
+    width: 5px; /* Adjust width as needed */
+
+}
+
+
+
+.picturePlacement:hover::-webkit-scrollbar-thumb {
+
+    background-color: #0092c28c; /* Customize scrollbar thumb color */
+
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+
+}
+
+/* .picturePlacement .framePict {
+
+    
+
+    
+
+    width: 100%;
+
+} */
+
+
+
+
+
+.pictFrame {
+
+    display: flex;
+
+    width: 286px;
+
+    height: 239px;
+
+    border-radius: 23px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    gap: 0;
+
+}
+
+
+
+.pictFrame:hover .overlayGaleri {
+
+    opacity: 1;
+
+  }
+
+
+
+.overlayGaleri {
+
+    display: flex;
+
+    padding: 44px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 75px;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    background: #0092c2e0;
+
+    border-radius: 23px; /* Sesuaikan dengan border-radius gambar */
+
+    opacity: 0; /* Sembunyikan overlayGaleri secara default */
+
+    transition: opacity 0.3s ease; /* Transisi untuk efek hover */
+
+    padding: 44px;
+
+}
+
+
+
+.hGdesc, .pGdesc {
+
+    color: #FFF;
+
+    font-style: normal;
+
+    line-height: normal;
+
+    text-align: center; /* Center the text */
+
+    margin:0;
+
+}
+
+
+
+.hGdesc {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+
+.pGdesc {
+
+font-size: 17px;
+
+font-weight: 400;
+
+}
+
+
+
+.pictFrame .galleryPict {
+
+    width: 100%;
+
+    object-fit: cover;
+
+}
+
+
+
+
+
+/* Tulisan Beta */
+
+
+
+.txtContainer {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+}
+
+
+
+.txtContainer .betaH, .betaP {
+
+    color: #0091C2;
+
+    text-align: center;
+
+}
+
+
+
+.txtContainer .betaH {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+}
+
+
+
+.txtContainer .betaP {
+
+    font-size: 13px;
+
+font-weight: 400;
+
+}
+
+
+
+
+
+
+
+
+
+/* Portfolio */
+
+.headingPortfolio .txtPortfolio {
+
+    width: 100%; 
+
+    height: 100%; 
+
+    position: relative
+
+}
+
+.portfolioContainer {
+
+    display: flex;
+
+    width: auto;
+
+    height: 457px;
+
+    padding: 76px 0px 76px 25px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 76px;
+
+    flex-shrink: 0;
+
+}
+
+.headingPortfolio .Glr1 {
+
+    font-size: 64px;
+
+    -webkit-text-stroke: 2px #0091C2; /* Stroke warna biru */
+
+    color: transparent; /* Tidak ada fill */
+
+    font-family: 'Noto Sans', sans-serif;
+
+    font-weight: 700;
+
+    word-wrap: break-word;
+
+    left: 3px;
+
+    top: 0px;
+
+    text-align: center;
+
+    border: none; /* Menghapus border agar hanya stroke terlihat */
+
+}
+
+
+
+.headingPortfolio .Glr2 {
+
+    color: #F4A3BA;
+
+    font-size: 64px;
+
+    font-family: Noto Sans;
+
+    font-weight: 700;
+
+    word-wrap: break-word;
+
+    left: 2px; 
+
+    top: 2px; 
+
+    position: absolute;
+
+}
+
+.headingPortfolio .linkPortfolio {
+
+    color: #0091C2;
+
+    text-decoration: none; /* Removes the underline */
+
+    font-size: 16px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    line-height: normal;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: transform 0.3s ease; 
+
+}
+
+
+
+.linkPortfolio:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+.itemPortfolio {
+
+    position: relative;
+
+    height: 218px;
+
+    width: 100%;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: space-between;;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+
+.portfolioPlacement {
+
+    width: 100%;
+
+    overflow-x: scroll; /* Enable vertical scroll */
+
+    display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+scrollbar-width: none; /* For Firefox */
+
+}
+
+/* Show a thin scrollbar on hover */
+
+.portfolioPlacement:hover::-webkit-scrollbar {
+
+    width: 8px; /* Adjust width as needed */
+
+}
+
+
+
+.portfolioPlacement:hover::-webkit-scrollbar-thumb {
+
+    background-color: #00000080; /* Customize scrollbar thumb color */
+
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+
+}
+
+
+
+
+
+.portoVid {
+
+    display: flex;
+
+    width: 280px;
+
+    height: 218px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+background: #FFEDA3;
+
+}
+
+
+
+.imgPorto {
+
+    display: flex;
+
+    width: 280px;
+
+    height: 158px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    overflow: hidden; /* Ensures the image does not overflow the container */
+
+}
+
+
+
+.imgPorto img {
+
+    width: 100%; /* Make the image fill the container */
+
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+
+    transition: transform 0.3s ease; 
+
+}
+
+
+
+.imgPorto img:hover {
+
+    transform: scale(1.1); /* Zoom effect */
+
+    cursor: pointer;
+
+}
+
+
+
+.portoVid .descPorto {
+
+    display: flex;
+
+    width: 225px;
+
+    height: 36px;
+
+    padding: 0px 8px;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    flex-shrink: 0;
+
+}
+
+
+
+.headDesc {
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 1;
+
+    align-self: stretch;
+
+    overflow: hidden;
+
+color: #000;
+
+text-overflow: ellipsis;
+
+font-family: "Noto Sans";
+
+font-size: 12px;
+
+font-style: normal;
+
+font-weight: 700;
+
+line-height: normal;
+
+margin: 0;
+
+transition: transform 0.5s ease;
+
+}
+
+
+
+.pDesc {
+
+display: -webkit-box;
+
+-webkit-box-orient: vertical;
+
+-webkit-line-clamp: 1;
+
+align-self: stretch;
+
+    overflow: hidden;
+
+    color: #000;
+
+    text-overflow: ellipsis;
+
+    font-family: "Noto Sans";
+
+    font-size: 10px;
+
+    font-style: normal;
+
+    font-weight: 400;
+
+    line-height: normal;
+
+    margin: 0;
+
+}
+
+
+
+.arrowRight, .arrowLeft  {
+
+    display: flex;
+
+    width: 41px;
+
+    height: 41px;
+
+    padding: 8px 4px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 139px;
+
+background: #FFF;
+
+box-shadow: 2px 2px 4.1px 0px rgba(0, 0, 0, 0.12);
+
+cursor: pointer;
+
+z-index: 9999;
+
+}
+
+
+
+
+
+
+
+.arrowLeft, .arrowRight {
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transisi untuk opacity dan transform */
+
+    position: absolute;
+
+    transform: translateY(-50%); /* Pindahkan ke tengah vertikal  */
+
+    z-index: 10; /* Pastikan panah berada di atas */
+
+}
+
+
+
+.arrowLeft {
+
+    left: 10px; /* Posisi arrowLeft di kiri */
+
+    transform: translateX(20px) translateY(0); /* Posisi awal untuk arrowLeft dari kanan */
+
+}
+
+
+
+.arrowRight {
+
+    right: 10px; /* Posisi arrowRight di kanan */
+
+    transform: translateX(-20px) translateY(0); /* Posisi awal untuk arrowRight dari kiri */
+
+}
+
+
+
+.itemPortfolio:hover .arrowLeft {
+
+    opacity: 1; /* Tampilkan panah kiri saat hover */
+
+    transform: translateX(0) translateY(0); /* Kembalikan posisi ke normal */
+
+}
+
+
+
+.itemPortfolio:hover .arrowRight {
+
+    opacity: 1; /* Tampilkan panah kanan saat hover */
+
+    transform: translateX(0) translateY(0); /* Kembalikan posisi ke normal */
+
+}
+
+
+
+.arrowLeft {
+
+position: relative;
+
+left: 10px;
+
+}
+
+
+
+.arrowRight {
+
+    position: relative;
+
+    right: 10px;
+
+    }
+
+    
+
+    .linkGallery:hover, .linkPortfolio:hover {
+
+        color: #76ddff;
+
+    }
+
+/* Footer */
+
+footer {
+
+    display: flex;
+
+    height: 133px;
+
+    padding: 0px 238px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-shrink: 0;
+
+    background: #FFEDA3;
+
+}
+
+
+
+footer p {
+
+    color: #000;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    line-height: normal;
+
+}
+
+
+
+.txtDanger {
+
+margin-bottom: 0;
+
+}
+
+
+
+
+
+.containerSocial{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    flex-direction: column;
+
+}
+
+
+
+
+
+.social {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+
+.social p:hover {
+
+    color: #0091C2;
+
+}
+
+
+
+.social .socialTxt {
+
+    color: #000;
+
+text-align: center;
+
+font-size: 15px;
+
+font-style: normal;
+
+font-weight: 400;
+
+line-height: normal;
+
+margin-bottom: 0;
+
+}
+
+
+
+.social svg {
+
+    fill:black;
+
+    width: 24px;
+
+    height: 24px;
+
+}
+
+
+
+footer .copyright {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+
+
+
+.copyright .boldTeam {
+
+    color: #0091C2;
+
+    border-left: 1px solid rgba(154, 154, 154, 0.5);
+
+    margin-left: 10px;
+
+    line-height: 1.2;
+
+    padding-left: 14px;
+
+    font-style: normal;
+
+font-weight: 700;
+
+}
+
+
+
+.copyright span {
+
+    color: #9A9A9A;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-style: normal;
+
+    font-weight: 400;
+
+    line-height: normal;
+
+    margin-bottom:0 ;
+
+    
+
+}
+
+
+
+/* Login */
+
+
+
+
+
+.form-container {
+
+    background-color: #a3ddee;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+
+    max-width: 400px;
+
+}
+
+.form-container h2 {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+.form-container input {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+}
+
+.form-container button {
+
+    width: 100%;
+
+    padding: 10px;
+
+    background-color: #c69c6d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.form-container button:hover {
+
+    background-color: #b07f54;
+
+}
+
+
+
+/* Styling untuk pesan error dan sukses */
+
+.alert-box{
+
+    position: absolute;
+
+    top: -100%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    min-width: 150px;
+
+    max-width: 90%;
+
+    width: auto;
+
+    height: auto;
+
+    padding: 10px;
+
+    text-transform: capitalize;
+
+    background: #a3ddee;
+
+    /* border-top: 10px solid #5bd9ff; */
+
+    border-radius: 10px;
+
+    color: #505050;
+
+    font-family: 'roboto', sans-serif;
+
+    text-align: center;
+
+    transition: 1s;
+
+    z-index: 40000;
+
+}
+
+  

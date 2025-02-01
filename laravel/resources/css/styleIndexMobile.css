@@ -1,0 +1,337 @@
+@charset "UTF-8";
+/* @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@media only screen and (max-width: 1024px) {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Noto Sans";
+    
+}
+
+a {
+    text-decoration: none; /* Removes the underline */
+    cursor: pointer;
+    
+}
+
+a:hover {
+color: #057499;
+
+}
+
+
+
+.overlay {
+height: auto !important;
+}
+
+
+.container, .overlay {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 45px 65px 0px 65px;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+/* Heading
+
+.heading .pictHeading{
+    width: 367px;
+    height: 344px;
+} */
+
+/* Animasi Text */
+
+.runningText .HeadingTxt {
+    font-size: 33px;
+}
+
+.marquee-container {
+    height: 57px;
+
+}
+
+.marquee-content p {
+    font-size: 33px;
+}
+
+
+/* Gallery */
+.containerGallery {
+    width: 700px;
+display: flex;
+padding: 52px 16px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 19px;
+flex-shrink: 0;
+}
+
+
+.headingGallery, .headingPortfolio {
+    gap: 7px;
+}
+
+
+
+.picturePlacement {
+    overflow-y: scroll;
+    display: flex;
+    width: 100%;
+    height: 331;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* .picturePlacement .framePict {
+    width: 638px;
+    height: 672px;
+    display: grid;
+    grid-template-columns: repeat(3, 30fr); /* Two columns 
+    gap: 13px;
+    border-radius: 16px;
+} */
+
+.pictFrame, .overlayGaleri {
+    width: 203px;
+    height: 158px;
+    flex-shrink: 0;
+    border-radius: 16px;
+}
+
+.overlayGaleri {
+    gap: 47px;
+}
+
+.headingGallery, .headingPortfolio {
+    gap: 8px;
+}
+
+.headingGallery .Glr1 {
+    font-size: 44px;
+    -webkit-text-stroke-width: 1px;
+}
+
+
+.headingGallery .Glr2 {
+    font-size: 44px
+}
+
+.hGdesc {
+    font-size: 13px;
+}
+
+.pGdesc {
+    font-size: 11px;
+}
+
+/* Portfolio */
+
+.itemPortfolio {
+    width: 662px;
+}
+
+.headingPortfolio .Glr1 {
+    font-size: 40px;
+    -webkit-text-stroke-width: 1px;
+}
+
+.headingPortfolio .Glr2 {
+    font-size: 40px;
+}
+
+.arrowLeft, .arrowRight {
+    opacity: 1;
+    transform: translateX(0) translateY(0); 
+}
+
+
+}
+
+@media (max-width: 1629px) { 
+    /* .arrowLeft, .arrowRight {
+        opacity: 1;
+        transform: translateX(0) translateY(0); 
+    } */
+    
+}
+@media (max-width: 988px) {
+
+/* navbar */
+    /* Hide desktop navbar */
+    .navbar.dekstop {
+        display: none;
+    }
+
+    /* Show mobile navbar */
+    .navbar.mobile {
+        display: flex;
+        width: 100%;
+        padding: 15px 70px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        position: sticky;
+        top: 0;
+    z-index: 1020;
+    transition: background-color 0.3s ease;
+    }
+    
+    .navbar.mobile.top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        flex-wrap: nowrap;
+    }
+    
+    .navbar.mobile.scrolled{
+        background: #FFF; /* Color when scrolled */
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    }
+    
+    .dark-mode .navbar.mobile.scrolled{
+        background-color: #2C2C2C;
+    }
+
+    .logoNav {
+        align-self: flex-end;
+        margin-right: 20px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-left: 639px;
+    }
+    
+    .menu-toggle svg {
+        width: 33px;
+height: 28px;
+flex-shrink: 0;
+    }
+    .navbar.mobile .navlink{
+        color: #000;
+        text-align: right;
+        text-decoration: none; /* Removes the underline */
+        font-size: 14px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        transition: color 0.3s ease; /* Transisi untuk warna teks */
+    }
+    
+    
+    
+    .navlink::after{
+        content: ''; /* Membuat elemen pseudo */
+        position: absolute; /* Posisi absolut untuk garis */
+        left: 0; /* Menempatkan garis di kiri */
+        bottom: 0; /* Menempatkan garis di bawah teks */
+        height: 3px; /* Tinggi garis */
+        width: 100%; /* Lebar mengikuti teks */
+        background-color: #0091C2; /* Warna garis */
+        transform: scaleX(0); /* Mengatur skala awal garis menjadi 0 (tidak terlihat) */
+        transition: transform 0.3s ease; /* Transisi untuk efek hover */
+      }
+      
+      .navlink:hover {
+        padding-top: 10px; /* Mengubah padding saat hover */
+        color: #0091C2; /* Mengubah warna teks saat hover */
+      }
+      
+      .logoNav:hover {
+        transform: translateY(5%);
+      }
+      
+      .navlink:hover::after{
+        transform: scaleX(1); /* Mengubah skala garis menjadi 1 saat hover */
+      }
+
+      .navlinks {
+        display: flex; /* Ensure the element is always part of the document flow */
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-height: 0; /* Start with 0 height */
+        overflow: hidden; /* Hide overflowing content */
+        opacity: 0; /* Start invisible */
+        align-items:center;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    .navlink {
+        padding: 10px 10px; /* Move padding to individual links */
+    }
+    .navbar.mobile.active {
+        gap: 10px;
+    }
+    .navlinks.active {
+        max-height: 300px; /* Adjust to fit the content height */
+        opacity: 1; /* Make it fully visible */
+        align-items:center;
+    }
+    
+    /* Pastikan menu mobile disembunyikan di awal */
+.navlinks.mobile {
+    display: none;
+}
+
+/* Saat kelas 'hidden' ditambahkan, menu mobile disembunyikan */
+.navlinks.mobile.hidden {
+    display: none;
+}
+
+/* Saat kelas 'hidden' dihapus, menu mobile ditampilkan */
+.navlinks.mobile:not(.hidden) {
+    display: flex;
+}
+
+    
+    
+    /* Heading
+
+.heading .pictHeading{
+    width: 367px;
+    height: 344px;
+} */
+
+/* Button Filter gallery & Portfolio */
+
+.select-menu, .select-menu .options {
+    width: 166px;
+}
+
+.select-menu .select-btn, .option .option-text {
+    font-size: 15px;
+}
+
+}
+
+
