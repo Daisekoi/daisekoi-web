@@ -24,3 +24,11 @@ thead th {
     @apply bg-gray-100 p-4 rounded block font-mono text-sm;
 }
 
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0; }
+  }
+  
+  .progress-bar {
+    animation: progress 5s linear forwards;
+  }

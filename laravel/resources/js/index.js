@@ -49,7 +49,7 @@ function showNextText() {
 }
 
 // Mulai animasi saat halaman dimuat
-window.onload = showNextText;
+showNextText();
 
 
 // Button Scroll //

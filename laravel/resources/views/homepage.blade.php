@@ -53,7 +53,7 @@
     </div>
     <nav class="navbar desktop justify flex items-center gap-[156px] p-[22px_398x] sticky top-0 z-50 transition-all duration-300 ease-in-out hidden lg:flex max-w-screen-lg mx-auto rounded-1" id="navbar-desktop">
         <!-- Link Galeri -->
-        <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/comingSoon.html">Galeri</a>
+        <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/gallery">Galeri</a>
         
         <!-- Link Pendaftaran -->
         <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/daftar">Pendaftaran</a>
@@ -62,10 +62,10 @@
         <a class="logoNav bg-[url('laravel/public/imgs/LogoDaisekoi.png')] bg-center bg-cover w-[117px] h-[72.668px] flex-shrink-0 relative transform transition-all hover:translate-y-[5%]" href="/"></a>
         
         <!-- Link Portfolio -->
-        <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/comingSoon.html">Portfolio</a>
+        <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/portfolio">Portfolio</a>
         
         <!-- Link Shop -->
-        <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/comingSoon.html">Shop</a>
+        <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/dai-shop">Shop</a>
     </nav>
     
     

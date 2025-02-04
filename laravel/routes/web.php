@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;  
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\registerMemberController;
 use Illuminate\Support\Facades\Storage;
 
 // Route::get('/', function () {
@@ -21,6 +22,30 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
 
     return view('homepage');
+
+});
+
+Route::get('/daftar', function () {
+
+    return view('comingSoon');
+
+});
+
+Route::get('/gallery', function () {
+
+    return view('comingSoon');
+
+});
+
+Route::get('/portfolio', function () {
+
+    return view('comingSoon');
+
+});
+
+Route::get('/dai-shop', function () {
+
+    return view('comingSoon');
 
 });
 
@@ -92,6 +117,7 @@ Route::get('/play-alert', function () {
 });  
 
 
+Route::get('/api/getMemberList', [registerMemberController::class, 'getregisterMember'])->name('member.index');
 
 
 Route::put('/api/updateUser', [UserController::class, 'updateUser']);

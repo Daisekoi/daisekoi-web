@@ -249,6 +249,7 @@ fetchAndProfile();
     const usersLink = document.getElementById("users");
     const eventsLink = document.getElementById("events");
     const blogsLink = document.getElementById("blogs");
+    const galleryLink = document.getElementById("Gallery");
 
     // Ambil elemen konten
     const homeContent = document.getElementById("homeContent");
@@ -256,6 +257,7 @@ fetchAndProfile();
     const usersContent = document.getElementById("usersContent");
     const eventsContent = document.getElementById("eventsContent");
     const blogsContent = document.getElementById("blogsContent");
+    const galleryContent = document.getElementById("galleryContent");
 
     // Fungsi untuk menampilkan konten yang sesuai
     const showContent = (contentToShow) => {
@@ -265,6 +267,7 @@ fetchAndProfile();
         usersContent.classList.add("hidden");
         eventsContent.classList.add("hidden");
         blogsContent.classList.add("hidden");
+        galleryContent.classList.add("hidden");
 
         // Tampilkan konten yang dipilih
         contentToShow.classList.remove("hidden");
@@ -348,6 +351,10 @@ fetchAndProfile();
     blogsLink.addEventListener("click", (e) => {
         e.preventDefault(); // Mencegah perilaku default link
         showContent(blogsContent); // Tampilkan konten profil
+    });
+    galleryLink.addEventListener("click", (e) => {
+        e.preventDefault(); // Mencegah perilaku default link
+        showContent(galleryContent); // Tampilkan konten profil
     });
 
     // Tampilkan konten home secara default saat halaman dimuat
@@ -1102,15 +1109,15 @@ sortedEvents.forEach(event => {
     
         //   }  
         scheduleAutoDelete(event);
-        testName(event);
+        // testName(event);
         tbody.appendChild(tr);
     });
 }
 
-async function testName(event){
-const nameEvents = event.nameEvents;
-console.log('test ' +nameEvents);
-}
+// async function testName(event){
+// const nameEvents = event.nameEvents;
+// console.log('test ' +nameEvents);
+// }
 
 // Fungsi untuk hapus otomatis event
 // Fungsi untuk menghapus event otomatis
@@ -1297,56 +1304,141 @@ function generateRandomId() {
 }
 
 
-// Panggil fungsi untuk mengambil dan menampilkan event
-// Event listener untuk memastikan fungsi dipanggil setelah DOM selesai dimuat
-// document.addEventListener('DOMContentLoaded', fetchEvents);
-const alertContainer = document.getElementById('alert-box');
-    const alertMsg = document.getElementById('alert');
+// //Member Registration List
+// async function fetchMemberList() {
+//     try {
+//         const response = await fetch('/api/getMemberList'); // Mengambil data dari API
+//         if (!response.ok) {
+//             throw new Error('Gagal mengambil data member');
+//         }
+//         const members = await response.json();
+//         displayMembers(members); // Menampilkan data member
+//     } catch (error) {
+//         console.error('Error fetching member list:', error.message);
+//     }
+// }
+
+// // Fungsi untuk menampilkan daftar member di tabel
+// function displayMembers(members) {
+//     const tbody = document.querySelector('#registerMemberList tbody');
+//     tbody.innerHTML = ''; // Bersihkan tabel sebelum menampilkan ulang
+
+//     members.forEach(member => {
+//         const tr = document.createElement('tr');
+//         tr.innerHTML = `
+//             <td class="text-left px-4 py-2 text-wrap">${member.timestamp}</td>
+//             <td class="text-left px-4 py-2 text-wrap">${member.nama}</td>
+//             <td class="text-left px-4 py-2 text-wrap">${member.jurusan}</td>
+//             <td class="text-left px-4 py-2 text-wrap">${member.nim}</td>
+//             <td class="text-center px-4 py-2 text-wrap">
+//                 <div class="flex gap-3 flex-row align-items-end relative w-full h-auto p-4">
+//                     <div class="w-6 h-6 relative cursor-pointer hover:bg-transparent active:bg-[#f4a3ba] lg:hover:bg-[#f4a3ba] rounded delete-Member" data-nim="${member.nim}">
+//                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+//                             <path d="M7.5 21C6.95 21 6.47933 20.8043 6.088 20.413C5.69667 20.0217 5.50067 19.5507 5.5 19V6H4.5V4H9.5V3H15.5V4H20.5V6H19.5V19C19.5 19.55 19.3043 20.021 18.913 20.413C18.5217 20.805 18.0507 21.0007 17.5 21H7.5ZM9.5 17H11.5V8H9.5V17ZM13.5 17H15.5V8H13.5V17Z" fill="black"/>
+//                         </svg>
+//                     </div>
+//                 </div>
+//             </td>
+//         `;
+//         tbody.appendChild(tr);
+//     });
+// }
+
+// // Memanggil fungsi untuk mengambil dan menampilkan daftar member
+// fetchMemberList();
+
+// // Fungsi untuk menghapus member berdasarkan NIM
+// document.addEventListener('click', async (event) => {
+//     if (event.target.closest('.delete-Member')) {
+//         const nim = event.target.closest('.delete-Member').getAttribute('data-nim');
+//         const nameMember = event.target.closest('tr').querySelector('td:nth-child(2)').textContent;
+//         await deleteMember(nim, nameMember);
+//     }
+// });
+
+// // Fungsi untuk menghapus member
+// async function deleteMember(nim, nameMember) {
+//     const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus member dengan NIM <b>${nim}</b>?`);
+//     if (confirmDelete) {
+//         try {
+//             const response = await fetch(`/api/deleteMember/${nim}`, {
+//                 method: 'DELETE',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                     'X-CSRF-TOKEN': csrfToken, // Gantilah dengan token CSRF yang sesuai
+//                 },
+//             });
+//             if (response.ok) {
+//                 alert(`Member ${nameMember} berhasil dihapus!`);
+//                 fetchMemberList(); // Perbarui daftar member setelah penghapusan
+//             } else {
+//                 alert('Gagal menghapus member.');
+//             }
+//         } catch (error) {
+//             console.error('Error deleting member:', error.message);
+//         }
+//     }
+// }
+
+
+
+const alertQueue = [];
+let isShowing = false;
+const MAX_ALERTS = 0 ;
 const alertBox = (message) => {
+
+      if(alertQueue.length >= MAX_ALERTS) {
+        alertQueue.shift(); // Hapus notifikasi tertua jika lebih dari MAX_ALERTS
+    }
+    alertQueue.push(message);
+    // Jika sedang menampilkan notifikasi, skip
+    if(isShowing) return;
     
-    alertMsg.innerHTML = message; 
-    alertContainer.style.top = `5%`;
-    
-    
+    // Proses antrian
+    const showNextAlert = () => {
+        if(alertQueue.length === 0) {
+            isShowing = false;
+            return;
+        }
+        
+        // Ambil pesan tertua
+        const currentMessage = alertQueue.shift();
+        
+        // Tampilkan notifikasi
+        const alertElement = document.getElementById('alert-box');
+        const alertContent = document.getElementById('alert');
+        
+        alertContent.textContent = currentMessage;
+        alertElement.style.top = '20px';
+        isShowing = true;
         // Memainkan audio notifikasi  
         const audio = new Audio('/play-alert');  
         audio.play().catch(error => {  
             console.error('Gagal memainkan audio:', error);  
         });  
-      // Fungsi untuk menutup alert
-    const closeAlert = () => {
-        alertContainer.style.top = null;
+        // Animasi progress bar
+        const progressBar = document.createElement('div');
+        progressBar.style.height = '3px';
+        progressBar.style.background = '#681034';
+        progressBar.style.width = '100%';
+        progressBar.style.transition = 'width 3s linear';
+        alertElement.appendChild(progressBar);
+        
+        // Auto-close setelah 3 detik
+        setTimeout(() => {
+            alertElement.style.top = '-100%';
+            progressBar.style.width = '0%';
+            
+            // Tunggu animasi selesai sebelum tampilkan berikutnya
+            setTimeout(() => {
+                alertElement.removeChild(progressBar);
+                showNextAlert();
+            }, 1000);
+            
+        }, 3000);
     };
-
-    // // Event listener untuk menutup alert saat diklik
-    // alertContainer.onclick = () => {
-    //     closeAlert();
-    // };
-
-    // Event listener untuk swipe dari bawah ke atas
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-    alertContainer.addEventListener('touchstart', (e) => {
-        touchStartY = e.changedTouches[0].screenY;
-    });
-
-    alertContainer.addEventListener('touchend', (e) => {
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-    });
-
-    const handleSwipe = () => {
-        if (touchEndY < touchStartY) {
-            closeAlert();
-        }
-    };
-
-    setTimeout(() => {
-        closeAlert();
-    }, 5000);
     
-  
+    showNextAlert();
 };
 
 const confirmBox = (message) => {

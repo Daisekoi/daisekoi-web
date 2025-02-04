@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Daisekoi</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('./laravel/resources/css/styleLogin.css') }}">
+
     <link rel="stylesheet" href="{{ asset('./laravel/resources/css/app.css') }}">
     <script src="{{ asset('./laravel/resources/js/dashboard.js') }}" defer></script>
     
@@ -28,7 +28,7 @@
     <div class="relative min-h-screen">
       <!-- Background Utama -->
       <div id="mainContainer"
-        class="absolute w-full h-[95%] bg-neutral-50 rounded-bl-[50px] rounded-br-[50px]"
+        class="absolute w-full h-[93%] bg-neutral-50 rounded-bl-[50px] rounded-br-[50px]"
       ></div>
 
       <!-- Konten Wrapper -->
@@ -77,6 +77,13 @@
                 class="nav-link flex items-center px-4 py-3 rounded-md text-gray-700 text-xl w-auto font-semibold lg:hover:bg-[#f4a3ba]/50 ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-4.18a3 3 0 0 0-5.64 0H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m-7 0a1 1 0 1 1-1 1a1 1 0 0 1 1-1m7 15H5v-4h14Zm0-6H5V9h14Z"/><circle cx="17" cy="11" r="1" fill="currentColor"/><circle cx="14" cy="11" r="1" fill="currentColor"/><circle cx="14" cy="17" r="1" fill="currentColor"/><circle cx="17" cy="17" r="1" fill="currentColor"/><path fill="currentColor" d="M6 10h5v2H6zm0 6h5v2H6z"/></svg>
                 <span class="ml-3">Event Setting</span>
+              </a>  
+              
+              <a
+                 id="Gallery" data-permission="viewGallery"
+                class="nav-link flex items-center px-4 py-3 rounded-md text-gray-700 text-xl w-auto font-semibold lg:hover:bg-[#f4a3ba]/50 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 8a2 2 0 1 1-4 0a2 2 0 0 1 4 0"/><path fill="currentColor" fill-rule="evenodd" d="M11.943 1.25h.114c2.309 0 4.118 0 5.53.19c1.444.194 2.584.6 3.479 1.494c.895.895 1.3 2.035 1.494 3.48c.19 1.411.19 3.22.19 5.529v.088c0 1.909 0 3.471-.104 4.743c-.104 1.28-.317 2.347-.795 3.235q-.314.586-.785 1.057c-.895.895-2.035 1.3-3.48 1.494c-1.411.19-3.22.19-5.529.19h-.114c-2.309 0-4.118 0-5.53-.19c-1.444-.194-2.584-.6-3.479-1.494c-.793-.793-1.203-1.78-1.42-3.006c-.215-1.203-.254-2.7-.262-4.558Q1.25 12.792 1.25 12v-.058c0-2.309 0-4.118.19-5.53c.194-1.444.6-2.584 1.494-3.479c.895-.895 2.035-1.3 3.48-1.494c1.411-.19 3.22-.19 5.529-.19m-5.33 1.676c-1.278.172-2.049.5-2.618 1.069c-.57.57-.897 1.34-1.069 2.619c-.174 1.3-.176 3.008-.176 5.386v.844l1.001-.876a2.3 2.3 0 0 1 3.141.104l4.29 4.29a2 2 0 0 0 2.564.222l.298-.21a3 3 0 0 1 3.732.225l2.83 2.547c.286-.598.455-1.384.545-2.493c.098-1.205.099-2.707.099-4.653c0-2.378-.002-4.086-.176-5.386c-.172-1.279-.5-2.05-1.069-2.62c-.57-.569-1.34-.896-2.619-1.068c-1.3-.174-3.008-.176-5.386-.176s-4.086.002-5.386.176" clip-rule="evenodd"/></svg>
+                <span class="ml-3">Gallery Setting</span>
               </a>
               
               <a
@@ -122,14 +129,54 @@
         <div class="flex-1 bg-[#a3ddee] max-h-[615px] rounded shadow-md p-6 overflow-x-hidden lg:p-8" id="mainContent">
         <div id="alert-box" class="absolute top-[-100%] left-1/2 transform -translate-x-1/2 min-w-[150px] max-w-[90%] w-auto h-auto p-2 text-center bg-gradient-to-b from-[#2992C5] to-[#2277A0] rounded-lg text-[#505050] font-roboto transition-all duration-1000 z-[40000]">
     <p id="alert" class="font-bold text-white break-words capitalize p-6"></p>
+    
 </div>
 
             <div id="homeContent" class="content-section">
-                <div class="h-full flex justify-start items-start">
+                <div class=" flex justify-start items-start">
                     <div class="justify-start items-center gap-2.5 inline-flex">
                         <div id="greetingMessage" class="text-black text-2xl font-normal font-['Inter'] text-wrap"></div>
                     </div>
                 </div>
+                
+                <div class="flex flex-column flex-wrap flex-row-reverse align-items-end relative w-full h-auto bg-[#F1DEC6] border border-black border-2 rounded rounded-2 pt-4 overflow-y-auto overflow-hidden">
+                <div class="h-6 justify-start items-end gap-2.5 inline-flex mr-4" >
+                 
+                
+                <div class="w-6 h-6 relative cursor-pointer hover:bg-transparent active:bg-[#f4a3ba] lg:hover:bg-[#f4a3ba] rounded" id="refreshBtnRegisterMemb">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20q-3.35 0-5.675-2.325T4 12t2.325-5.675T12 4q1.725 0 3.3.712T18 6.75V5q0-.425.288-.712T19 4t.713.288T20 5v5q0 .425-.288.713T19 11h-5q-.425 0-.712-.288T13 10t.288-.712T14 9h3.2q-.8-1.4-2.187-2.2T12 6Q9.5 6 7.75 7.75T6 12t1.75 4.25T12 18q1.7 0 3.113-.862t2.187-2.313q.2-.35.563-.487t.737-.013q.4.125.575.525t-.025.75q-1.025 2-2.925 3.2T12 20"/></svg>
+                </div>
+                    
+                    
+                </div>
+                <div class="w-full max-h-[350px] overflow-y-auto overflow-x-auto mt-4">
+                 
+                
+             <table id="registerMemberList" class="min-w-full table-auto border-collapse">
+             
+                    <thead>
+                      <tr>
+                      
+                        <th class="text-left px-4 py-2 text-wrap">Nama Event</th>
+                        <th class="text-left px-4 py-2 text-wrap">Harga Tiket</th>
+                        <th class="text-left px-4 py-2 text-wrap">Event Start</th>
+                        <th class="text-left px-4 py-2 text-wrap">Event End</th>
+                        <th class="text-left px-4 py-2 text-wrap">Location</th>
+                        <th class="text-left px-4 py-2 text-wrap">Keterangan</th>
+                        <th class="text-left px-4 py-2 text-wrap">Poster Event</th>
+                        <th class="text-left px-4 py-2 text-wrap text-center">Aksi</th>
+                      </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Data pengguna akan diisi di sini -->
+                    </tbody>
+                  </table>
+              
+            </div>
+            
+    
+            </div>
             </div>
             <div id="profileContent" class="flex flex-col content-section hidden">
                 <h2 class="text-black text-2xl">Profil Pengguna</h2>
@@ -185,8 +232,8 @@
         </div>
     </div>
     
-            <div class="flex flex-column align-items-end relative w-full h-auto bg-[#F1DEC6] border border-black border-2 rounded-2 py-4 overflow-hidden" id="usersSection">
-                <div class="h-6 justify-start items-end gap-2.5 inline-flex p-4" >
+            <div class="flex flex-column flex-wrap flex-row-reverse align-items-end relative w-full h-auto bg-[#F1DEC6] border border-black border-2 rounded-2 pt-4 overflow-hidden" id="usersSection">
+                <div class="h-6 justify-start items-end gap-2.5 inline-flex mr-4" >
                   <div class="w-6 h-6 relative cursor-pointer hover:bg-transparent active:bg-[#f4a3ba] lg:hover:bg-[#f4a3ba] rounded" id="addUsers">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                         <path d="M19.5 12.998H13.5V18.998H11.5V12.998H5.5V10.998H11.5V4.998H13.5V10.998H19.5V12.998Z" fill="black"/>
@@ -199,7 +246,7 @@
                     
                     
                 </div>
-                <div class="w-full max-h-[350px] overflow-y-auto overflow-x-auto">
+                <div class="w-full max-h-[350px] overflow-y-auto overflow-x-auto mt-4">
                  
                 
              <table id="userList" class="min-w-full table-auto border-collapse">
@@ -364,8 +411,8 @@
         </form>
     </div>
 </div>
-            <div class="flex flex-column align-items-end relative w-full h-auto bg-[#F1DEC6] border border-black border-2 rounded rounded-2 py-4 overflow-y-auto overflow-hidden" id="usersSection">
-                <div class="h-6 justify-start items-end gap-2.5 inline-flex p-4" >
+            <div class="flex flex-column flex-wrap flex-row-reverse align-items-end relative w-full h-auto bg-[#F1DEC6] border border-black border-2 rounded rounded-2 pt-4 overflow-y-auto overflow-hidden">
+                <div class="h-6 justify-start items-end gap-2.5 inline-flex mr-4" >
                   <div class="w-6 h-6 relative cursor-pointer hover:bg-transparent active:bg-[#f4a3ba] lg:hover:bg-[#f4a3ba] rounded" id="addEvents">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                         <path d="M19.5 12.998H13.5V18.998H11.5V12.998H5.5V10.998H11.5V4.998H13.5V10.998H19.5V12.998Z" fill="black"/>
@@ -378,7 +425,7 @@
                     
                     
                 </div>
-                <div class="w-full max-h-[350px] overflow-y-auto overflow-x-auto">
+                <div class="w-full max-h-[350px] overflow-y-auto overflow-x-auto mt-4">
                  
                 
              <table id="eventList" class="min-w-full table-auto border-collapse">
@@ -408,11 +455,24 @@
             </div>
             </div>
             
+            
+            <div id="galleryContent" class="flex flex-col content-section hidden gap-3">
+            <h2 class="text-black text-2xl font-semibold">Gallery Settings</h2>
+            </div>
+            
             <!-- End Main Content -->
         </div>
-        
+        <footer class="footer fixed bottom-0 w-full h-[55px] py-[10px] ">
+    <div class="justify-between flex-1 container flex flex-nowrap flex-row justify-items-center p-1 min-h-[calc(1vh_-_1px)]">
+           
+            <p class="text-white text-sm text-center break-words">Website created by <a class="text-[#0091c2] hover:text-[#00c0fa]" href="/">Daisekoi Team</a></p>
+            <p class="text-white font-extrabold text-sm text-center break-words ">Dashboard</p>
+        </div>
+    </footer>
         <!-- End Konten Wrapper -->
       </div>
+      
+      
        <!-- End Container Utama -->
     </div>
     
