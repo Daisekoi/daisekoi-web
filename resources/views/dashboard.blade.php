@@ -5,13 +5,13 @@
     <title>Dashboard Daisekoi</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="{{ asset('./laravel/resources/css/app.css') }}">
-    <script src="{{ asset('./laravel/resources/js/dashboard.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('./css/app.css') }}">
+    <script src="{{ asset('./js/dashboard.js') }}" defer></script>
     
     <script src=""></script>
     <link
       rel="shortcut icon"
-      href="/laravel/public/imgs/DaisekoiLogoBg.png"
+      href="/imgs/DaisekoiLogoBg.png"
       style="border-radius: 100%"
       type="image/jpg"
     />
@@ -51,12 +51,12 @@
         <!-- Sidebar -->
         <div id="sidebar" class="lg:w-max bg-gradient-to-b from-[#a3ddee] to-[#B1F0F7] rounded p-4 lg:p-[15px] flex flex-col gap-4 justify-between transition-transform transform -translate-x-full lg:translate-x-0 fixed inset-y-0 left-0 z-40 lg:relative">
         <div class="lg:hidden flex justify-between items-center sm:gap-10 lg:gap-0 bg-[#f4a3ba] p-3 rounded" >
-            <div class="bg-center bg-cover max-w-[86px] max-h-[53px] w-[17vw] h-[10.5vw]" style="background-image: url('/laravel/public/imgs/LogoDaisekoi.png');"></div>
+            <div class="bg-center bg-cover max-w-[86px] max-h-[53px] w-[17vw] h-[10.5vw]" style="background-image: url('/imgs/LogoDaisekoi.png');"></div>
             <div id="userContainerMobile" class="flex flex-col gap-4 max-h-[53px]"></div>
         </div>
         <!-- Logo dan User Info -->
         <div class="sm:hidden lg:flex justify-between items-center sm:gap-15 lg:gap-20 p-2">
-                <div class="bg-center bg-cover max-w-[86px] max-h-[53px] w-[17vw] h-[10.5vw] hidden lg:flex" style="background-image: url('/laravel/public/imgs/LogoDaisekoi.png');"></div>
+                <div class="bg-center bg-cover max-w-[86px] max-h-[53px] w-[17vw] h-[10.5vw] hidden lg:flex" style="background-image: url('/imgs/LogoDaisekoi.png');"></div>
                 <div id="userContainer" class="flex flex-col gap-4 hidden lg:flex"></div>
             </div>
             <!-- Navigasi -->

@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Website Admin</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="laravel/public/imgs/DaisekoiLogoBg.png" style="border-radius: 100%;" type="image/jpg">
-    <link rel="stylesheet" href="{{ asset('laravel/resources/css/styleLogin.css') }}" defer> <!-- Jika ada CSS -->
-    <script src="{{ asset('laravel/resources/js/indexLogin.js') }}" defer></script>
+    <link rel="shortcut icon" href="imgs/DaisekoiLogoBg.png" style="border-radius: 100%;" type="image/jpg">
+    <link rel="stylesheet" href="{{ asset('css/styleLogin.css') }}" defer> <!-- Jika ada CSS -->
+    <script src="{{ asset('js/indexLogin.js') }}" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.tailwindcss.com"></script> 
@@ -25,12 +25,12 @@
     </div>
     <nav class="navbar desktop flex items-center justify-center gap-[156px] p-[22px] sticky top-0 z-50 transition-all duration-300 ease-in-out hidden lg:flex mx-auto max-w-screen-lg shadow-md rounded-lg" id="navbar-desktop">
       <!-- Logo -->
-      <a class="logoNav bg-[url('laravel/public/imgs/LogoDaisekoi.png')] bg-center bg-cover w-[117px] h-[72.668px] flex-shrink-0 relative transform transition-transform hover:translate-y-[5%]" href="/"></a>
+      <a class="logoNav bg-[url('imgs/LogoDaisekoi.png')] bg-center bg-cover w-[117px] h-[72.668px] flex-shrink-0 relative transform transition-transform hover:translate-y-[5%]" href="/"></a>
   </nav>
   <nav class="navbar mobile flex flex-col justify-center items-center w-full p-4 sticky-lg-top top-0 z-2000 lg:hidden" id="navbar-mobile">
     <div class="flex w-full justify-between items-center">
         <!-- Logo -->
-        <a class="logoNav bg-[url('laravel/public/imgs/LogoDaisekoi.png')] bg-center bg-cover max-w-md max-h-md md:max-w-lg md:max-h-lg lg:max-w-xl lg:max-h-xl xl:max-w-2xl xl:max-h-2xl w-[17vw] h-[10.5vw]" href="/"></a>
+        <a class="logoNav bg-[url('imgs/LogoDaisekoi.png')] bg-center bg-cover max-w-md max-h-md md:max-w-lg md:max-h-lg lg:max-w-xl lg:max-h-xl xl:max-w-2xl xl:max-h-2xl w-[17vw] h-[10.5vw]" href="/"></a>
         
 </nav>
 
@@ -43,7 +43,7 @@
     <!-- Kolom Kiri: Gambar -->
     <div class="relative w-full lg:w-[50%] h-[300px] lg:h-[510px] flex items-center justify-center mb-6 lg:mb-0">
         <div class="w-full h-full max-w-[300px] lg:max-w-none bg-cover bg-center" 
-             style="background-image: url('laravel/public/imgs/HomePage.png');"></div>
+             style="background-image: url('imgs/HomePage.png');"></div>
     </div>
 
 

@@ -3,10 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daisekoi | Wujudkan Kreatifitasmu</title>
-    <link rel="shortcut icon" href="laravel/public/imgs/DaisekoiLogoBg.png" style="border-radius: 100%;" type="image/jpg">
-    <link rel="stylesheet" href="{{ asset('laravel/resources/css/styleIndexMobile.css') }}" defer>
-    <link rel="stylesheet" href="{{ asset('laravel/resources/css/styleIndex.css') }}" defer>
-    <script src="{{ asset('laravel/resources/js/index.js') }}" defer></script>
+    <link rel="shortcut icon" href="imgs/DaisekoiLogoBg.png" style="border-radius: 100%;" type="image/jpg">
+    <link rel="stylesheet" href="{{ asset('css/styleIndexMobile.css') }}" defer>
+<link rel="stylesheet" href="{{ asset('css/styleIndex.css') }}" defer>
+<script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.tailwindcss.com"></script>  
@@ -59,7 +59,7 @@
         <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/daftar">Pendaftaran</a>
         
         <!-- Logo -->
-        <a class="logoNav bg-[url('laravel/public/imgs/LogoDaisekoi.png')] bg-center bg-cover w-[117px] h-[72.668px] flex-shrink-0 relative transform transition-all hover:translate-y-[5%]" href="/"></a>
+        <a class="logoNav bg-[url('imgs/LogoDaisekoi.png')] bg-center bg-cover w-[117px] h-[72.668px] flex-shrink-0 relative transform transition-all hover:translate-y-[5%]" href="/"></a>
         
         <!-- Link Portfolio -->
         <a class="navlink text-gray-800 text-center font-bold text-sm transition-colors duration-300 ease-in-out hover:text-blue-500 hover:pt-2" href="/portfolio">Portfolio</a>
@@ -72,7 +72,7 @@
     <nav class="navbar mobile flex flex-col justify-center items-center w-full p-4 sticky-lg-top top-0 z-2000 lg:hidden" id="navbar-mobile">
         <div class="flex w-full justify-between items-center">
             <!-- Logo -->
-            <a class="logoNav bg-[url('laravel/public/imgs/LogoDaisekoi.png')] bg-center bg-cover max-w-md max-h-md md:max-w-lg md:max-h-lg lg:max-w-xl lg:max-h-xl xl:max-w-2xl xl:max-h-2xl w-[17vw] h-[10.5vw]" href="/"></a>
+            <a class="logoNav bg-[url('imgs/LogoDaisekoi.png')] bg-center bg-cover max-w-md max-h-md md:max-w-lg md:max-h-lg lg:max-w-xl lg:max-h-xl xl:max-w-2xl xl:max-h-2xl w-[17vw] h-[10.5vw]" href="/"></a>
             <!-- Tombol Menu (Hamburger) -->
             <!-- <button id="menu-toggle" class="menu-toggle flex justify-center items-center p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11" fill="none">
@@ -126,7 +126,7 @@
     
         <div class="heading flex flex-col justify-center items-center gap-20 p-0 mb-20 md:gap-30 lg:gap-40 ">
             
-            <div id="pictHeadingDark" class="w-full h-[calc(100vw*548/585)] max-w-[585px] max-h-[548px] bg-cover bg-center bg-no-repeat" style="background-image: url('laravel/public/imgs/HomePage.png');"></div>
+            <div id="pictHeadingDark" class="w-full h-[calc(100vw*548/585)] max-w-[585px] max-h-[548px] bg-cover bg-center bg-no-repeat" style="background-image: url('imgs/HomePage.png');"></div>
 
             <div class="flex flex-col items-center gap-2">
                 <h2 class="text-lg md:text-2xl lg:text-3xl text-center font-normal">Apapun Kreatifitasmu</h2>
@@ -156,7 +156,7 @@
         <!-- Events Section -->
         <div class="mb-8 shadow rounded rounded-4 py-5">
             <h2 class="text-2xl font-bold mb-4 text-center">Event</h2>
-            <p class="mb-4 text-center">Here are our updates of the events related to BINUS University</p>
+            <p class="mb-4 text-center">Here are our updates of the events related to Daisekoi</p>
             <div id="events-container" class="space-y-4 p-[32px]">
                 <!-- Event items will be dynamically inserted here -->
             </div>
